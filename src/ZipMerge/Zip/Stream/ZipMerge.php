@@ -292,7 +292,10 @@ class ZipMerge {
         if ($utf8FileName) {
             $cd .= "; filename*=UTF-8''" . rawurlencode($utf8FileName);
         }
-
+        
+        header('Access-Control-Allow-Credentials: true');
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Expose-Headers: Authorization');
         header('Pragma: public');
         header('Last-Modified: ' . gmdate('D, d M Y H:i:s T'));
         header('Expires: 0');
